@@ -9,14 +9,16 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp
+    src/main.cpp \
+    src/view/widget/mainwindow.cpp \
+    src/view/view_director.cpp
 
 HEADERS += \
-    mainwindow.h
+    src/view/widget/mainwindow.h \
+    src/view/view_director.h
 
 FORMS += \
-    mainwindow.ui
+    src/view/widget/mainwindow.ui
 
 TRANSLATIONS += \
     test_skeleman_ja_JP.ts
