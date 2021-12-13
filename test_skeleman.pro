@@ -10,12 +10,17 @@ CONFIG += c++11
 
 SOURCES += \
     src/main.cpp \
+    src/view/command/open_dropdown_list_command.cpp \
     src/view/widget/mainwindow.cpp \
-    src/view/view_director.cpp
+    src/view/view_director.cpp \
+    src/view/widget/toolbarbutton.cpp
 
 HEADERS += \
+    src/view/command/command_interface.h \
+    src/view/command/open_dropdown_list_command.h \
     src/view/widget/mainwindow.h \
-    src/view/view_director.h
+    src/view/view_director.h \
+    src/view/widget/toolbarbutton.h
 
 FORMS += \
     src/view/widget/mainwindow.ui
