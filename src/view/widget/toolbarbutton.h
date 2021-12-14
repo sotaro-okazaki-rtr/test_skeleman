@@ -9,9 +9,14 @@ class ToolbarButton : public QPushButton
 {
 public:
     ToolbarButton(QWidget *parent = nullptr);
+    void setMouseLeftButtonCommand(ICommand *command);
+    void setMouseRightButtonCommand(ICommand *command);
+    void setMouseMiddleButtonCommand(ICommand *command);
     void mousePressEvent(QMouseEvent *e) override;
 private:
-    ICommand* _command;
+    ICommand* _mouseLeftButtonCommand = nullptr;
+    ICommand* _mouseRightButtonCommand = nullptr;
+    ICommand* _mouseMiddleButtonCommand = nullptr;
 };
 
 #endif // TOOLBARBUTTON_H
