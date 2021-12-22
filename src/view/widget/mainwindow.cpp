@@ -1,15 +1,20 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "toolbarbutton.h"
+#include "../command/open_dropdown_list_command.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+#include <QDebug>
+#include <QMouseEvent>
+
+MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
 {
-    ui->setupUi(this);
+    OpenDropdownListCommand *command = new OpenDropdownListCommand();
+    ToolbarButton *button = new ToolbarButton(command, command, command, this);
+    button->setGeometry(100, 100, 100, 100);
+    this->setMouseTracking(true);
 }
 
-MainWindow::~MainWindow()
+void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
-    delete ui;
+    qDebug() << event->pos();
 }
 

@@ -1,22 +1,25 @@
 #ifndef TOOLBARBUTTON_H
 #define TOOLBARBUTTON_H
 
-#include "../command//command_interface.h"
+#include "../pub_sub/view_event_publisher.h"
+#include "../pub_sub/view_event_subscriber.h"
 
+#include <vector>
 #include <QPushButton>
+#include <QObject>
 
-class ToolbarButton : public QPushButton
+class ToolbarButton : public QPushButton, public ViewEventPublisher
 {
+
 public:
     ToolbarButton(QWidget *parent = nullptr);
-    void setMouseLeftButtonCommand(ICommand *command);
-    void setMouseRightButtonCommand(ICommand *command);
-    void setMouseMiddleButtonCommand(ICommand *command);
+    ~ToolbarButton() {}
     void mousePressEvent(QMouseEvent *e) override;
+
+    // ViewEventPublisher's method override
+    void publish() override;
 private:
-    ICommand* _mouseLeftButtonCommand = nullptr;
-    ICommand* _mouseRightButtonCommand = nullptr;
-    ICommand* _mouseMiddleButtonCommand = nullptr;
+    std::vector<ViewEventSubscriber*> subscribers;
 };
 
 #endif // TOOLBARBUTTON_H
