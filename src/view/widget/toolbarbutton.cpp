@@ -12,7 +12,7 @@ ToolbarButton::ToolbarButton(QWidget *parent)
 
 void ToolbarButton::mousePressEvent(QMouseEvent *e)
 {
-    this->publish();
+    qDebug() << "clicked";
     /*
     if(e->button() == Qt::LeftButton) {
         if(_mouseLeftButtonCommand != nullptr) {

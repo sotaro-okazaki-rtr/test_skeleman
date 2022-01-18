@@ -1,6 +1,8 @@
 #include "display_command.h"
 
-DisplayCommand::WidgetDisplayCommand(QWidget *widget)
+#include <QWidget>
+
+DisplayCommand::DisplayCommand(QWidget *widget)
     : WidgetManipulationCommand(widget)
 {
 

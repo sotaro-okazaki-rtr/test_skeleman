@@ -11,10 +11,13 @@ CONFIG += c++11
 SOURCES += \
     src/main.cpp \
     src/view/command/display_command.cpp \
-    src/view/command/geometry_alteration_command.cpp \
     src/view/command/macro_command.cpp \
+    src/view/command/position_alteration_command.cpp \
     src/view/command/resize_command.cpp \
     src/view/command/widget_manipulation_command.cpp \
+    src/view/handler/command_content_updater.cpp \
+    src/view/handler/command_reconfigurator.cpp \
+    src/view/handler/command_sender.cpp \
     src/view/view_director.cpp \
     src/view/widget/mainwindow.cpp \
     src/view/widget/toolbarbutton.cpp
@@ -22,10 +25,18 @@ SOURCES += \
 HEADERS += \
     src/view/command/command_interface.h \
     src/view/command/display_command.h \
-    src/view/command/geometry_alteration_command.h \
     src/view/command/macro_command.h \
+    src/view/command/position_alteration_command.h \
     src/view/command/resize_command.h \
     src/view/command/widget_manipulation_command.h \
+    src/view/handler/command_content_updater.h \
+    src/view/handler/command_reconfigurator.h \
+    src/view/handler/command_sender.h \
+    src/view/handler/post_decorator.h \
+    src/view/handler/pre_decorator.h \
+    src/view/handler/reconfiguration_strategy.h \
+    src/view/handler/updatable_interface.h \
+    src/view/handler/user_input_handler.h \
     src/view/pub_sub/view_event_publisher.h \
     src/view/pub_sub/view_event_subscriber.h \
     src/view/view_director.h \

@@ -8,16 +8,13 @@
 #include <QPushButton>
 #include <QObject>
 
-class ToolbarButton : public QPushButton, public ViewEventPublisher
+class ToolbarButton : public QPushButton
 {
 
 public:
     ToolbarButton(QWidget *parent = nullptr);
     ~ToolbarButton() {}
     void mousePressEvent(QMouseEvent *e) override;
-
-    // ViewEventPublisher's method override
-    void publish() override;
 private:
     std::vector<ViewEventSubscriber*> subscribers;
 };
